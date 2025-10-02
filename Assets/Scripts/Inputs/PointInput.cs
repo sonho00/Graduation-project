@@ -15,7 +15,10 @@ public class PointInput : MonoBehaviour, IPointerMoveHandler, IPointerClickHandl
     public void OnPointerMove(PointerEventData eventData)
     {
         cursor.SetActive(true);
-        cursor.transform.position = brickManager.GetClosestBrick(eventData.position).transform.position;
+        Debug.Log(eventData.position);
+        Vector2 offset = new Vector2(Screen.width / 2f - 540f, Screen.height / 2f - 1080f);
+        Debug.Log(offset);
+        cursor.transform.position = brickManager.GetClosestBrick(eventData.position - offset).transform.position;
     }
 
     public void OnPointerExit(PointerEventData eventData)

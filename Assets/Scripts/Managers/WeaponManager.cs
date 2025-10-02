@@ -34,7 +34,7 @@ public class WeaponManager : MonoBehaviour
         }
         for (int i = 0; i < weapons.Length; i++)
         {
-            float iconPositionX = Screen.width / (2 * weapons.Length) * (2 * i + 1);
+            float iconPositionX = 1080f / (2 * weapons.Length) * (2 * i + 1);
             weapons[i].ShowIcon(new Vector2(iconPositionX, 150f));
         }
         buttons.SetActive(false);
